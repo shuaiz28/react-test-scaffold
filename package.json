@@ -8,7 +8,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "cypress": "start-server-and-test start http://localhost:1234 cypress:run",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +18,25 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.7",
+    "babel-jest": "^26.2.2",
     "cypress": "^4.11.0",
+    "jest": "^26.2.2",
     "parcel-bundler": "^1.12.4",
     "start-server-and-test": "^1.11.2"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/setupFiles/mockSetup.js"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
   }
 }
