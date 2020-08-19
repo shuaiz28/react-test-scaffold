@@ -1,9 +1,9 @@
 describe('Index page', () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit('/');
   });
 
-  it('should render App', function () {
+  it('should render App', () => {
     cy.screenshot('index');
   });
   it('should contain Hello World', () => {

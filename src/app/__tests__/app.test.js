@@ -7,5 +7,5 @@ describe('App', () => {
   test('should render App component', () => {
     render(<App />);
     expect(screen.getByTestId('app')).toBeInTheDocument;
-  })
+  });
 });
