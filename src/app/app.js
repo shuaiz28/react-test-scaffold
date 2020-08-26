@@ -1,33 +1,40 @@
 import React from 'react';
-import './app.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-const mockData = ['banana', '1', 'apple', '#1', 'apple1', '2banana'];
+import './app.css';
+import Sort from './containers/sort';
+import Home from './containers/home';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        sortedArray: mockData.join(', '),
-    };
-  }
-
-  handleSort = () => this.setState({
-    sortedArray: [...mockData].sort().join(', ')
-  });
-
-  handleReset = () => this.setState({
-    sortedArray: mockData.join(', '),
-  });
-
   render() {
     return (
-      <div data-testid="app" className="container">
-        <div className="buttonContainer">
-          <button onClick={this.handleSort}>排序</button>
-          <button onClick={this.handleReset}>重置</button>
+      <Router>
+        <div>
+          <nav className="navContainer">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/sort">Sort</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/sort">
+              <Sort />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
         </div>
-        <div className="sortedList">{this.state.sortedArray}</div>
-      </div>
+      </Router>
     );
   }
 }

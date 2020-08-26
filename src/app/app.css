@@ -11,3 +11,7 @@
 .sortedList {
     margin-top: 10px;
 }
+
+.navContainer {
+    border-bottom: 1px solid #7f7f7f;
+}
