@@ -2,22 +2,37 @@ import React from 'react';
 
 import '../app.css';
 
-const mockData = ['banana', '1', 'apple', '#1', 'apple1', '2banana'];
-
 class Sort extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortedArray: mockData.join(', '),
+      sortedArray: '',
+      originalArray: []
     };
   }
 
+  componentDidMount() {
+    fetch("http://localhost:3000/sortedItems")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            originalArray: result,
+            sortedArray: [...result].join(', '),
+          });
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+  }
+
   handleSort = () => this.setState({
-    sortedArray: [...mockData].sort().join(', ')
+    sortedArray: [...this.state.originalArray].sort().join(', ')
   });
 
   handleReset = () => this.setState({
-    sortedArray: mockData.join(', '),
+    sortedArray: this.state.originalArray.join(', '),
   });
 
   render() {
