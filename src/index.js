@@ -1,5 +1,14 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './app/app';
+import { Provider } from 'react-redux';
 
-ReactDom.render(<App />, document.getElementById('root'));
+import { App } from './app/App';
+import { store } from './app/_helpers';
+import { configureFakeBackend } from './app/_helpers';
+
+configureFakeBackend();
+
+ReactDom.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('root'));
