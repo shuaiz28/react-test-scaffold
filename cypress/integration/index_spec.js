@@ -7,6 +7,9 @@ describe('Index page', () => {
     cy.screenshot('index');
   });
   it('should contain Hello World', () => {
-    cy.contains('Hello World');
+    cy.contains('Login');
+    cy.contains('Username');
+    cy.contains('Password');
+    cy.contains('Register');
   });
 });
