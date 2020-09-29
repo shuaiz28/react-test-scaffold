@@ -1,5 +1,6 @@
 import config from 'config';
 import { authHeader } from '../_helpers';
+import fetch from 'node-fetch';
 
 export const userService = {
     login,
