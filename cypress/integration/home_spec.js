@@ -21,6 +21,8 @@ describe('homePage', () => {
 
     cy.contains('Logout');
 
-    // cy.url().should('include', '/login');
+    cy.contains('Logout').click();
+
+    cy.url().should('include', '/login');
   });
 });
