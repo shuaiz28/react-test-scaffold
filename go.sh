@@ -7,6 +7,10 @@ function unitTest {
     npm test
 }
 
+function e2eTest {
+  npm run cypress
+}
+
 function display-usage {
     echo "Usage: $bash go.sh { install | test }"
 }
@@ -14,6 +18,9 @@ function display-usage {
 case $1 in
     unitTest)
         unitTest
+        ;;
+    e2eTest)
+        e2eTest
         ;;
     *)
         display-usage
