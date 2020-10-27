@@ -9,12 +9,12 @@ describe('homePage', () => {
     window.localStorage.clear();
   });
 
-  it('should remove user successfully', () => {
-    cy.visit('/');
-    cy.get('#bb').click();
-
-    cy.contains('b b').should('not.exist');
-  });
+  // it('should remove user successfully', () => {
+  //   cy.visit('/');
+  //   cy.get('#bb').click();
+  //
+  //   cy.contains('b b').should('not.exist');
+  // });
 
   it('should logout successfully', () => {
     cy.visit('/');

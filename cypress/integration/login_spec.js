@@ -22,16 +22,16 @@ describe('Login page', () => {
     cy.contains('Password is required');
   });
 
-  it('should login successfully', () => {
-    cy.visit('/login');
-
-    cy.get('input[name=username]').type('aa');
-    cy.get('input[name=password]').type('123456');
-
-
-    cy.get('button:contains("Login")').click();
-
-    cy.contains('Hi a!');
-  });
+  // it('should login successfully', () => {
+  //   cy.visit('/login');
+  //
+  //   cy.get('input[name=username]').type('aa');
+  //   cy.get('input[name=password]').type('123456');
+  //
+  //
+  //   cy.get('button:contains("Login")').click();
+  //
+  //   cy.contains('Hi a!');
+  // });
 });
 
