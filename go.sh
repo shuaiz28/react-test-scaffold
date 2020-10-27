@@ -3,6 +3,7 @@
 function unitTest {
     node -v
     npm -v
+    npm install --cache-min Infinity --registry=https://registry.npm.taobao.org
     npm test
 }
 
