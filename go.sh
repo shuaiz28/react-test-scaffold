@@ -8,7 +8,10 @@ function unitTest {
 }
 
 function e2eTest {
-  npm run cypress
+    node -v
+    npm -v
+    npm install --cache-min Infinity --registry=https://registry.npm.taobao.org
+    npm run cypress
 }
 
 function display-usage {
